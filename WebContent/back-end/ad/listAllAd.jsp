@@ -49,7 +49,7 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">廣告標題:</th>
-                                            <th scope="col">廣告內文:</th>
+                                            <th scope="col">圖片:</th>
                                             <th scope="col">廣告內文:</th>
                                             <th scope="col">廣告下架日期:</th>
                                             <th scope="col">廣告狀態:</th>

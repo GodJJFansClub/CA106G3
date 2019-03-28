@@ -304,7 +304,7 @@
 			//	隨然我是在連線建立好時傳送訊息(ServerWebSocket), 依舊會觸發這個onmessage
 
 			webSocket.onmessage = function(event) {
-				$("#newBroMessage").text(event.data);
+				$("#newBroMessage").html(event.data);
 				let newMsgModal = $('#myModal').modal('show');
 			};
 

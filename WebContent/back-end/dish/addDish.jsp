@@ -67,9 +67,6 @@
 											src="<%=request.getContextPath()%>/publibrary/ckeditor4/ckeditor.js"></script>
 										<textarea rows="20" cols="40" name="dish_resume">
        									 </textarea>
-										<script>
-											CKEDITOR.replace('dish_resume');
-										</script>
 									</div>
 								</div>
 								<div class="form-group">

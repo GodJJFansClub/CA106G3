@@ -131,7 +131,7 @@ th, td {
 												<tr>
 													<td>廣告內文:</td>
 													<td>
-													<textarea type="TEXT"  name="ad_con" class="form-control" value="<%=adVO.getAd_con()%>"></textarea>
+													<textarea name="ad_con" class="form-control" value="<%=adVO.getAd_con()%>"></textarea>
 													</td>
 												</tr>
 

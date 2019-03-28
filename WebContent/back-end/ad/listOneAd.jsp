@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="com.ad.model.*"%>
 <%-- 此頁暫練習採用 Script 的寫法取值 --%>
-
+<<jsp:useBean id="foodSupSvc" class="com.foodSup.model.FoodSupService"/>
 <%
 	AdVO adVO = (AdVO) request.getAttribute("adVO"); //SustServlet.java(Concroller), 存入req的adVO物件
 %>
@@ -45,13 +45,14 @@
                                         <tr>
                                             <th scope="col">廣告編號:</th>
                                             <th scope="col">廣告標題:</th>
+                                            <th scope="col">廣告照片:</th>
                                             <th scope="col">廣告內文:</th>
                                             <th scope="col">廣告上架日期:</th>
                                             <th scope="col">廣告下架日期:</th>
                                             <th scope="col">廣告狀態:</th>
                                             <th scope="col">廣告類別:</th>
                                             <th scope="col">食材供應商:</th>
-                                            <th scope="col">食材供應商編號:</th>
+
                                           
                                         </tr>
                                     </thead>
@@ -66,7 +67,7 @@
 			<th scope="row"><%=adVO.getAd_end()%></th>
 			<th scope="row">${adStatusMap[adVO.ad_status]}</th>
 			<th scope="row">${adTypeMap[adVO.ad_type]}</th>
-			<th scope="row"><%=adVO.getFood_sup_ID()%></th>
+			<th scope="row">${foodSupSvc.getOneFoodSup(adVO.food_sup_ID).food_sup_name}</th>
 			
 		</tr>
 		

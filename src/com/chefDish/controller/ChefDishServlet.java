@@ -1,17 +1,23 @@
 package com.chefDish.controller;
 
 import java.io.IOException;
+import java.util.Base64;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import com.chefDish.model.*;
+import com.dish.model.DishService;
+import com.dish.model.DishVO;
 
 public class ChefDishServlet extends HttpServlet {
 	
@@ -96,6 +102,8 @@ public class ChefDishServlet extends HttpServlet {
 				String dish_ID = request.getParameter("dish_ID");
 				String chef_dish_status = request.getParameter("chef_dish_status");
 				
+				
+				
 				ChefDishVO chefDishVO = new ChefDishVO();
 				chefDishVO.setChef_ID(chef_ID);
 				chefDishVO.setDish_ID(dish_ID);
@@ -113,6 +121,24 @@ public class ChefDishServlet extends HttpServlet {
 				ChefDishService chefDishSvc = new ChefDishService();
 				chefDishVO = chefDishSvc.update(chef_ID, dish_ID, chef_dish_status);
 				List<ChefDishVO> list = chefDishSvc.getAllNotCheck();
+				ServletContext servletContext = getServletContext();
+				Map< String, Session> bcSessionMap = (Map< String, Session>)servletContext.getAttribute("bcSessionMap");
+				DishService dishSvc = new DishService();
+				DishVO dishWebUseVO = dishSvc.getOneDish(dish_ID);
+				Base64.Encoder encoder = Base64.getEncoder();
+				
+				if(chefDishVO.getChef_dish_status().equals("d1")) {
+					String encodedText = encoder.encodeToString( dishWebUseVO.getDish_pic());
+					bcSessionMap.get(chef_ID).getAsyncRemote().sendText( 
+						"您的"+  dishWebUseVO.getDish_name() +"已通過審核"
+						+ "<img src=\"data:image/png;base64,"+encodedText+"\">");
+					
+				}
+				
+				if(chefDishVO.getChef_dish_status().equals("d2")) {
+					bcSessionMap.get(chef_ID).getAsyncRemote().sendText( "您的"+ dishWebUseVO.getDish_name() +"審核不通過");
+				}
+				
 				//3.修改完成，準備轉交
 				session.setAttribute("list", list);
 				RequestDispatcher successView = 

@@ -55,7 +55,7 @@
 			</tr>
 			<tr>
 				<td>商品照片:</td>
-				<td><img src="<%=request.getContextPath()%>/foodMall/foodMall.do?food_sup_ID=${foodMallVO.food_sup_ID}&food_ID=${foodMallVO.food_ID}"></td>
+				<td><img src="<%=request.getContextPath()%>/foodMall/foodMall.do?food_sup_ID=${foodMallVO.food_sup_ID}&food_ID=${foodMallVO.food_ID}" width="150px" height="200px"></td>
 			</tr>
 			<tr>
 				<td>介紹:</td>
