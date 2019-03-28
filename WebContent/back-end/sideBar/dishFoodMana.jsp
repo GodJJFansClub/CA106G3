@@ -29,7 +29,7 @@
                          <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<%=request.getContextPath()%>/back-end/dish/listAllDish.jsp" aria-expanded="false" aria-expanded="false">
                                 <i class="mdi mdi-account-network"></i>
-                                <span class="hide-menu">新菜色申請</span>
+                                <span class="hide-menu">修改菜色狀態</span>
                             </a>
                         </li>
                         <li class="sidebar-item">

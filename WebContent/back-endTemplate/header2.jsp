@@ -18,13 +18,10 @@
 <link
 	href="<%=request.getContextPath()%>/datetimepicker/jquery.datetimepicker.css"
 	rel="stylesheet">
-
-<!-- Font-family -->	
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou">
 	
 	<style type="text/css">
 		.topbar {
-			background:black;
+			background:#2E4053;
 		}
 	</style>
 	
@@ -55,11 +52,12 @@
 		<nav class="navbar top-navbar navbar-expand-md navbar-light">
 			<div class="navbar-header" data-logobg="skin5">
 
-				<a  href="<%=request.getContextPath()%>/back-end/homepage.jsp">
-					<div class="ml-1 d-none d-sm-block" style="font-family:'ZCOOL QingKe HuangYou';font-size:46px;color:#FFF176;margin-left:5px;">
-						"&nbsp;食&nbsp;神&nbsp;來&nbsp;了&nbsp;"
-					</div>
-				</a>
+				<!-- ============================================================== -->
+				<!-- End Logo -->
+				<!-- ============================================================== -->
+				<!-- ============================================================== -->
+				<!-- Toggle which is visible on mobile only -->
+				<!-- ============================================================== -->
 				
 			</div>
 			<!-- ============================================================== -->
@@ -79,7 +77,7 @@
 						href="<%=request.getContextPath()%>/back-end/foodSup/listAllFoodSup.jsp">
 							<div class="d-flex align-items-center">
 								<i class="font-20 mr-1"></i>
-								<div class="ml-1 d-none d-sm-block" style="font-family:'ZCOOL QingKe HuangYou';font-size:24px;color:white;">
+								<div class="ml-1 d-none d-sm-block" style="font-family:Microsoft JhengHei;font-size:18px;font-weight:bold;color:white;">
 									<span>合作夥伴</span>
 								</div>
 							</div>
@@ -89,7 +87,7 @@
 						href="<%=request.getContextPath()%>/back-end/cust/listAllCust.jsp">
 							<div class="d-flex align-items-center">
 								<i class="font-20 mr-1"></i>
-								<div class="ml-1 d-none d-sm-block" style="font-family:'ZCOOL QingKe HuangYou';font-size:24px;color:white;">
+								<div class="ml-1 d-none d-sm-block" style="font-family:Microsoft JhengHei;font-size:18px;font-weight:bold;color:white;">
 									<span>顧客資料管理</span>
 								</div>
 							</div>
@@ -100,7 +98,7 @@
 						href="<%=request.getContextPath()%>/back-end/foodMall/listAllFoodMall.jsp">
 							<div class="d-flex align-items-center">
 								<i class="font-20 mr-1"></i>
-								<div class="ml-1 d-none d-sm-block" style="font-family:'ZCOOL QingKe HuangYou';font-size:24px;color:white;">
+								<div class="ml-1 d-none d-sm-block" style="font-family:Microsoft JhengHei;font-size:18px;font-weight:bold;color:white;">
 									<span>商城管理</span>
 								</div>
 							</div>
@@ -111,7 +109,7 @@
 						href="<%=request.getContextPath()%>/back-end/dish/AllDish.jsp">
 							<div class="d-flex align-items-center">
 								<i class="font-20 mr-1"></i>
-								<div class="ml-1 d-none d-sm-block" style="font-family:'ZCOOL QingKe HuangYou';font-size:24px;color:white;">
+								<div class="ml-1 d-none d-sm-block" style="font-family:Microsoft JhengHei;font-size:18px;font-weight:bold;color:white;">
 									<span>菜色及食材管理</span>
 								</div>
 							</div>
@@ -122,7 +120,7 @@
 						href="<%=request.getContextPath()%>/back-end/emp/select_page.jsp">
 							<div class="d-flex align-items-center">
 								<i class="font-20 mr-1"></i>
-								<div class="ml-1 d-none d-sm-block" style="font-family:'ZCOOL QingKe HuangYou';font-size:24px;color:white;">
+								<div class="ml-1 d-none d-sm-block" style="font-family:Microsoft JhengHei;font-size:18px;font-weight:bold;color:white;">
 									<span>員工管理</span>
 								</div>
 							</div>
@@ -132,7 +130,7 @@
 						href="<%=request.getContextPath()%>/back-end/ad/listAllAd.jsp">
 							<div class="d-flex align-items-center">
 								<i class="font-20 mr-1"></i>
-								<div class="ml-1 d-none d-sm-block" style="font-family:'ZCOOL QingKe HuangYou';font-size:24px;color:white;">
+								<div class="ml-1 d-none d-sm-block" style="font-family:Microsoft JhengHei;font-size:18px;font-weight:bold;color:white;">
 									<span>廣告管理</span>
 								</div>
 							</div>
@@ -141,8 +139,8 @@
 						class="nav-link waves-effect waves-dark">
 							<div class="d-flex align-items-center" style="margin-left:150px;">
 								<i class="font-20 mr-1"></i>
-								<div class="ml-1 d-none d-sm-block" style="font-family:'ZCOOL QingKe HuangYou';font-size:24px;color:white;">
-									<span>歡迎:<font style="text-transform:capitalize;font-family:Microsoft JhengHei;font-size:24px;color:red;"> ${empVO.emp_name} </font>您好
+								<div class="ml-1 d-none d-sm-block" style="font-family:Microsoft JhengHei;font-size:18px;font-weight:bold;color:white;">
+									<span>歡迎:<font style="text-transform:capitalize;font-family:Microsoft JhengHei;font-size:18px;font-weight:bold;color:red;"> ${empVO.emp_name} </font>您好
 									</span>
 								</div>
 							</div>
@@ -154,7 +152,7 @@
 								<div class="ml-1 d-none d-sm-block">
 									<FORM METHOD="get"
 										action="<%=request.getContextPath()%>/back-end/logoutBack.do">
-										<input type="submit" class="btn btn-danger" value="登出" style="font-family:'ZCOOL QingKe HuangYou';font-size:24px;color:white;margin-top:12px;">
+										<input type="submit" class="btn btn-danger" value="登出" style="font-family:Microsoft JhengHei;font-size:18px;font-weight:bold;color:white;margin-top:12px;">
 									</FORM>
 								</div>
 							</div>

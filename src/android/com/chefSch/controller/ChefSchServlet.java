@@ -59,11 +59,11 @@ public class ChefSchServlet extends HttpServlet {
 			Type dateType = new TypeToken<List<Date>>() {
 			}.getType();
 			 dateList= gson.fromJson(stringDate, dateType);
-			
+		
 			for(Date date:dateList) {
-			
-				java.sql.Date sqlDate = new java.sql.Date(date.getTime());
-				chefSchService.addChefSch(chef_ID,sqlDate, "c1");
+				 ChefSchVO testChefSchvo=chefSchService.getOneChefSch(chef_ID,new java.sql.Date(date.getTime()));
+				 chefSchService.update(testChefSchvo.getChef_ID(), testChefSchvo.getChef_sch_date(), "c1");
+
 			}
 			
 			

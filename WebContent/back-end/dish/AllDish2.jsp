@@ -15,7 +15,6 @@
 <html>
 <head>
 <title>所有菜色資料</title>
-<link href="../../dist/css/style.min.css" rel="stylesheet">
 
 <body>
     <div id="main-wrapper" data-navbarbg="skin6" data-theme="light"
@@ -26,10 +25,9 @@
         <div class="page-wrapper">
             <div class="page-breadcrumb">
 <%--=================================工作區================================================--%>
-
-	<div class="alert alert-secondary text-center" role="alert" ><font style="font-weight:bold;font-size:26px;">菜色食材管理</font></div>
-	<hr class="border:0;height: 1px;background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));"/>
-                        
+		<div class="alert alert-secondary text-center" role="alert" ><font style="font-weight:bold;font-size:26px;">菜色管理</font></div>
+		<hr class="border:0;height: 1px;background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));"/>
+     
                     <div class="col">
                         <div class="card">
                             
@@ -67,7 +65,7 @@
                                            
                                        
                                             <th scope="row"><FORM METHOD="post" ACTION="<%=request.getContextPath() %>/dish/dish.do">
-													<input type="submit" value="審核"> <input
+													<input type="submit"  class="btn btn-secondary" value="審核"> <input
 														type="hidden" name="dish_ID" value="${dishVO.dish_ID}">
 													<input type="hidden" name="action"
 														value="getOne_For_Update">
