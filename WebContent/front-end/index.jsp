@@ -18,7 +18,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="">
-<meta HTTP-EQUIV="Refresh" content="20">
+<meta HTTP-EQUIV="Refresh" content="120">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -214,26 +214,6 @@
 					</div>
 				</div>
 			</div>  
-			<div class="single-slide">
-				<!-- Background Image-->
-				<div class="slide-bg-img bg-img"
-					style="background-image: url(<%=request.getContextPath()%>/froTempl/temp/img/bg-img/F4_2.png);"></div>
-				<!-- Welcome Text -->
-				<div class="container h-100">
-					<div class="row h-100 align-items-center">
-						<div class="col-12 col-lg-9">
-							<div class="welcome-text">
-								<h2 data-animation="fadeInUp" data-delay="300ms">
-									<span style="color:black; font-weight:bold; font-family: Microsoft JhengHei;">嚴選四大廚神</span><br>
-								</h2>
-								<h3 data-animation="fadeInUp" data-delay="500ms">
-									<span style="color:black; font-family: Microsoft JhengHei;" >為您服務</span>
-								</h3>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>  
 		<c:forEach var="adVO" items="${adSvc.allNowAd}">	
 			<!-- Single Slide -->
             <div class="single-slide">
@@ -288,7 +268,7 @@
                             <img src="<%=request.getContextPath()%>/froTempl/temp/img/core-img/m1.png" alt="">
                         </div>
                         <div class="scf-text">
-                            <h2><span class="counter1"  style="font-size:60px">${chefSvc.selectChefTotal}</span></h2>
+                            <h2><span class="counter1"  style="font-size:60px">${chefSvc.selectChefTotal}.0</span></h2>
                             <h6 style="font-size:30px">嚴選主廚</h6>
                         </div>
                     </div>
@@ -301,7 +281,7 @@
                             <img src="<%=request.getContextPath()%>/froTempl/temp/img/core-img/m5.png" alt="">
                         </div>
                         <div class="scf-text">
-                            <h2><span class="counter1"  style="font-size:60px">${custSvc.selectCustTotal}</span></h2>
+                            <h2><span class="counter1"  style="font-size:60px">${custSvc.selectCustTotal}.0</span></h2>
                             <h6 style="font-size:30px">食神的顧客</h6>
                         </div>
                     </div>
@@ -314,7 +294,7 @@
                             <img src="<%=request.getContextPath()%>/froTempl/temp/img/core-img/m6.png" alt="">
                         </div>
                         <div class="scf-text">
-                            <h2><span class="counter1"  style="font-size:60px">${menuSvc.selectMenuTotal}</span></h2>
+                            <h2><span class="counter1"  style="font-size:60px">${menuSvc.selectMenuTotal}.0</span></h2>
                             <h6 style="font-size:30px">嚴選套餐</h6>
                         </div>
                     </div>
@@ -327,7 +307,7 @@
                             <img src="<%=request.getContextPath()%>/froTempl/temp/img/core-img/m7.png" alt="">
                         </div>
                         <div class="scf-text">
-                            <h2 ><span class="counter1" style="font-size:60px">${foodMallSvc.selectFoodMallTotal}</span></h2>
+                            <h2 ><span class="counter1" style="font-size:60px">${foodMallSvc.selectFoodMallTotal}.0</span></h2>
                             <h6 style="font-size:30px">嚴選食材</h6>
                         </div>
                     </div>

@@ -49,12 +49,10 @@ public class AdServlet extends HttpServlet {
 
 				// 1.廣告標題
 				String ad_title = req.getParameter("ad_title");
-				String ad_titleReg = "^[(\\u4e00-\\u9fa5)(a-zA-Z0-9_)]{2,10}$";
+				
 				if (ad_title == null || ad_title.trim().length() == 0) {
 					errorMsgs.add("廣告標題: 請勿空白");
-				} else if (!ad_title.trim().matches(ad_titleReg)) {
-					errorMsgs.add(ad_title);
-				}
+				} 
 				//2.1廣告圖片
 				Part part = req.getPart("ad_pic");
 				InputStream in = part.getInputStream();

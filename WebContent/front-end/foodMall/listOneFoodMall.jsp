@@ -40,13 +40,13 @@ font-size:30px;
 	    		標題 :<a> ${foodMallVO.food_m_name}</a>
 	    	</div>
 	    	<div class="col">
-	    		食材名 :<a> ${foodSvc.getOneFood(foodMallVO.food_sup_ID).food_name}</a>
+	    		食材名 :<a> ${foodSvc.getOneFood(foodMallVO.food_ID).food_name}</a>
 	    	</div>
 	    	<div class="col">
 	    		價格 :<a> ${foodMallVO.food_m_price}</a>
 	    	</div>
 	    	<div class="col">
-	    		單位 :<a> ${foodMallVO.food_m_unit}</a>
+	    		單位 :<a> ${foodUnitMap[foodMallVO.food_m_unit]}</a>
 	    	</div>
 	    	<div class="col">
 	    		產地 :<a> ${foodMallVO.food_m_place}</a>

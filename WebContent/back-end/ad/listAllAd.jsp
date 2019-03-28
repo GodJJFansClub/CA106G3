@@ -48,7 +48,6 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th scope="col">廣告編號:</th>
                                             <th scope="col">廣告標題:</th>
                                             <th scope="col">廣告內文:</th>
                                             <th scope="col">廣告內文:</th>
@@ -63,10 +62,9 @@
 		                  <c:forEach var="adVO" items="${list}" begin="<%=pageIndex%>" end="<%=pageIndex+rowsPerPage-1%>">
 
 			<tr>
-				<th scope="row">${adVO.ad_ID}</th>
 				<th scope="row">${adVO.ad_title}</th>
-				<th scope="row"><c:if test="${not empty adVO.ad_pic}"><img src="<%=request.getContextPath()%>/ad/ad.do?ad_ID=${adVO.ad_ID}" width="300" height="200"></c:if>
-				    <c:if test="${empty adVO.ad_pic}"><img src="<%=request.getContextPath()%>/images/null2.jpg" width="180" height="200"></c:if></th>
+				<th scope="row"><c:if test="${not empty adVO.ad_pic}"><img src="<%=request.getContextPath()%>/ad/ad.do?ad_ID=${adVO.ad_ID}" width="150" height="100"></c:if>
+				    <c:if test="${empty adVO.ad_pic}"><img src="<%=request.getContextPath()%>/images/null2.jpg" width="140" height="150"></c:if></th>
 				<th scope="row" width="20%">${adVO.ad_con}</th>
 				
 				<th scope="row">${adVO.ad_end}</th>
@@ -77,11 +75,7 @@
 						${adStatusMap[adVO.ad_status]}
 					</span>
 				</c:when>
-				<c:otherwise>
-					<span class="label label-success label-rounded">
-						${adStatusMap[adVO.ad_status]}
-					</span>
-				</c:otherwise>
+				<c:otherwise>${adStatusMap[adVO.ad_status]}</c:otherwise>
 				</c:choose>
 				</th>
 				

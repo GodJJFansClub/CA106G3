@@ -382,6 +382,14 @@
     <url-pattern>/food/AddrSelect.do</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>CountOrder</servlet-name>
+    <servlet-class>com.foodOrder.controller.CountOrder</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CountOrder</servlet-name>
+    <url-pattern>/countOr/countOr.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>AndroidOrderByCustServlet</servlet-name>
     <servlet-class>android.com.orderByCust.controller.OrderByCustServlet</servlet-class>
   </servlet>

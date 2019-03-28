@@ -16,7 +16,7 @@
 
 <html>
 <head>
-<title>所有菜色資料 - listAllDish.jsp</title>
+<title>下架的菜色資料</title>
 
 
 </head>
@@ -80,10 +80,9 @@
                                            
                                        
                                             <th scope="row"><FORM METHOD="post" ACTION="<%=request.getContextPath() %>/dish/dish.do">
-													<input type="submit" value="審核"> <input
-														type="hidden" name="dish_ID" value="${dishVO.dish_ID}">
-													<input type="hidden" name="action"
-														value="getOne_For_Update">
+													<input type="submit"  class="btn btn-secondary" value="審核">
+													<input type="hidden" name="dish_ID" value="${dishVO.dish_ID}">
+													<input type="hidden" name="action" value="getOne_For_Update">
 												</FORM>
 												</th>
                           			      </tr>

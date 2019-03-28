@@ -98,15 +98,15 @@ th, td {
 						<td>${foodMallVO.food_m_name}</td>
 						<td>${mallStatusMap[foodMallVO.food_m_status]}</td>
 						<td><form method="post" action="<%=request.getContextPath()%>/foodMall/foodMall.do">
-								<input type="hidden" name="food_ID" value="${foodMallVO.food_ID}">
+								<input type="hidden" name="food_ID"class="btn btn-warning" value="${foodMallVO.food_ID}">
 								<input type="hidden" name="food_sup_ID" value="${foodMallVO.food_sup_ID}">
 							<c:choose>
 								<c:when test="${foodMallVO.food_m_status eq 'p1' || foodMallVO.food_m_status eq 'p3'}">
-									<button id="staBtn${ma.index}"  value="p4" type="submit">上架商品</button>
+									<button id="staBtn${ma.index}" class="btn btn-primary" value="p4" type="submit">上架商品</button>
 									<input type="hidden"  name="food_m_status" value="p4">
 								</c:when>
 								<c:when test="${foodMallVO.food_m_status eq 'p4'}">
-									<button id="staBtn${ma.index}" class="manaMallBtn" value="p3" type="submit">下架商品</button>
+									<button id="staBtn${ma.index}" class="btn btn-warning" value="p3" type="submit">下架商品</button>
 									<input type="hidden"  name="food_m_status" value="p3">
 								</c:when>
 							</c:choose>

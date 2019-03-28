@@ -42,7 +42,7 @@ h4 {
 
 <style>
 table {
-	width: 600px;
+	width: 800px;
 	background-color: white;
 	margin-top: 1px;
 	margin-bottom: 1px;
@@ -108,7 +108,7 @@ th, td {
 			<tr>
 				<td>數量:</td>
 				<td><input type="TEXT" name="fest_m_qty" size="20"
-					value="<%=(festMenuVO == null) ? "3" : festMenuVO.getFest_m_qty()%>" /></td>
+					value="<%=(festMenuVO == null) ? "請輸入數量" : festMenuVO.getFest_m_qty()%>" /></td>
 			</tr>
 
 			<tr>
@@ -124,46 +124,31 @@ th, td {
 			</tr>
 
 			<tr>
-				<td>照片:</td>
-				<td><input type="file" name="fest_m_pic" size="20" id="doc"
-					onchange="javascript:setImagePreview();" /></td>
-			</tr>
-
-			<tr>
-				<td>介紹:</td>
-				<td><input type="TEXT" name="fest_m_resume"
-					value="<%=(festMenuVO == null) ? "2000" : festMenuVO.getFest_m_resume()%>" /></td>
-			</tr>
-
-			<tr>
 				<td>出貨日期:</td>
 				<td><input type="TEXT" name="fest_m_send" id="f_date3"
 					value="<%=(festMenuVO == null) ? "請選擇出貨日期" : festMenuVO.getFest_m_send()%>" /></td>
 			</tr>
 
 			<tr>
-				<td>節慶主題料理狀態:</td>
-				<td><input type="TEXT" name="fest_m_status" size="20"
-					value="<%=(festMenuVO == null) ? "1" : festMenuVO.getFest_m_status()%>" /></td>
-			</tr>
-
-			<tr>
-				<td>種類:</td>
-				<!--  		<td><select name="fest_m_kind">
-						<option value=0>f0:下架
-						<option value=1>f1:上架
-				    </select>  -->
-				<td><input type="TEXT" name="fest_m_kind" size="20"
-					value="<%=(festMenuVO == null) ? "3" : festMenuVO.getFest_m_kind()%>" />
-				</td>
-			</tr>
-
-			<tr>
 				<td>價格:</td>
 				<td><input type="TEXT" name="fest_m_price" size="20"
-					value="<%=(festMenuVO == null) ? "3" : festMenuVO.getFest_m_price()%>" /></td>
+					value="<%=(festMenuVO == null) ? "請輸入價格" : festMenuVO.getFest_m_price()%>" /></td>
 			</tr>
-
+			
+			
+			<tr>
+				<td>照片:</td>
+				<td><input type="file" name="fest_m_pic" size="20" id="doc"
+					onchange="javascript:setImagePreview();" /></td>
+			</tr>
+			
+			
+			
+			<tr>
+				<td>介紹:</td>
+				<td><textarea type="TEXT" name="fest_m_resume"
+					value="<%=(festMenuVO == null) ? "請輸入介紹" : festMenuVO.getFest_m_resume()%>"></textarea></td>
+			</tr>
 
 				
 
@@ -176,6 +161,8 @@ th, td {
 		<br>
 			<input type="hidden" name="action" value="insert">
 			<input type="hidden" name="chef_ID" value="${chefVO.chef_ID}" />
+			<img src="<%=request.getContextPath()%>/images/x.png"
+									height="20" width="20" onClick="idwrite(this)"> 
 			<button type="submit" class="btn pixel-btn wow fadeInUp"
 												data-wow-delay="300ms">送出</button>
 										</form>
@@ -232,7 +219,19 @@ th, td {
 	height: 151px; /* height:  151px; */
 }
 </style>
-
+<script>
+      function idwrite(name){
+    	  
+    	  form1.fest_m_name.value="中秋月餅烤肉組"
+    	  form1.fest_m_qty.value="99"
+    	  form1.fest_m_start.value="2019-03-29"
+    	  form1.fest_m_end.value="2019-08-09"
+    	  form1.fest_m_send.value="2019-09-09"
+    	  form1.fest_m_resume.value="廚神推薦中秋烤肉最佳組合，一年一度的中秋節是闔家團圓一起烤肉的最佳時機，本組合提供10人份的頂級烤肉素材(內附火種)，如果肉烤燒焦或是沒考熟，還有月餅可以充飢。"
+    	  form1.fest_m_price.value="999"
+    	  
+      }
+</script>
 <script>
         $.datetimepicker.setLocale('zh');
         $('#f_date1').datetimepicker({

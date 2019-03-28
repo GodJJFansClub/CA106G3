@@ -22,9 +22,9 @@
 			height: 100hv;
 			right: 0px;
 			top: 200px;
-			width: 300px;
+			width: 650px;
 			position: fixed;
-    		background-color: rgba(0, 0, 0, 0.2);
+    		background-color: rgba(0, 0, 0, 0);
 			z-index: 50;
 			margin:0;
 			padding:0;
@@ -41,7 +41,7 @@
 	<div class="collapse" id="collapseShoppingCart">
 		<div class="card card-body">
 			<table class="table">
-				<thead class="thead-dark">
+				<thead class="thead-dark" >
 					<tr>
 						<th scope="col">標題</th>
 						<th scope="col">數量</th>

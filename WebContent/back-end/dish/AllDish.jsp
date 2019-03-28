@@ -65,7 +65,7 @@
                                            
                                        
                                             <th scope="row"><FORM METHOD="post" ACTION="<%=request.getContextPath() %>/dish/dish.do">
-													<input type="submit" value="審核"> <input
+													<input type="submit"  class="btn btn-secondary" value="審核"> <input
 														type="hidden" name="dish_ID" value="${dishVO.dish_ID}">
 													<input type="hidden" name="action"
 														value="getOne_For_Update">

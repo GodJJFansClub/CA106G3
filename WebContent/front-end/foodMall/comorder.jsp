@@ -13,7 +13,10 @@
 <body>
 	<jsp:include page="/froTempl/header.jsp" flush="true" />
 	<jsp:include page="/froTempl/headerMall.jsp" flush="true" />
-	
+	<div class="row justify-content-center">
+					<div class="col-12 col-lg-8">
+						<!-- Contact Form -->
+						<div class="contact-form-area text-center">
 	
 	<section class="contact-area section-padding-100">
         <div >
@@ -121,6 +124,9 @@
 		
 	</section>
 	
+			</div>
+			</div>
+		</div>
     <!-- ##### Contact Area End #####-->
 
 	<jsp:include page="/froTempl/footer.jsp" flush="true" />

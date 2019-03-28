@@ -119,12 +119,12 @@ function readURL(input){
 </script>
 
 				<script>
-      function idwrite(name){
-          form1.menu_name.value="六六六大順"
-          form1.menu_price.value="6666"  
-          form1.menu_resume.value="  包含鮑魚干貝火烔燉雞湯 、富貴牛腩筋、花雕貴妃蝦 、香煎羊小排、金華元蹄、麒麟深海石斑和臘味櫻花蝦米糕。 "
-      }
-</script>
+			      function idwrite(name){
+			          form1.menu_name.value="六六六大順"
+			          form1.menu_price.value="6666"  
+			          form1.menu_resume.value="  包含鮑魚干貝火烔燉雞湯 、富貴牛腩筋、花雕貴妃蝦 、香煎羊小排、四季鮮水果、蘋果乳酪佐烏魚子、金華元蹄、翡翠鮮蝦水餃、麒麟深海石斑和臘味櫻花蝦米糕。"
+			      }
+				</script>
 
 				<br>
 

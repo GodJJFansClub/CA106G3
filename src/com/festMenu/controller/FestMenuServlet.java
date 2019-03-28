@@ -344,7 +344,7 @@ public class FestMenuServlet extends HttpServlet {
 
 		if ("insert".equals(action)) { // 來自addReport.jsp的請求
 			int i = 1;
-			System.out.println("263");
+			
 			List<String> errorMsgs = new LinkedList<String>();
 			// Store this set in the request scope, in case we need to
 			// send the ErrorPage view.
@@ -376,7 +376,7 @@ public class FestMenuServlet extends HttpServlet {
 					errorMsgs.add("請輸入訂單成立日期!");
 				}
 
-				System.out.println(fest_m_start);
+				
 
 				java.sql.Date fest_m_end = null;// 5
 				try {
@@ -413,21 +413,16 @@ public class FestMenuServlet extends HttpServlet {
 
 				System.out.println(fest_m_send);
 
-				String fest_m_status = "f0";// 9
-				if (fest_m_status == null || fest_m_status.trim().length() == 0) {
-					errorMsgs.add("節慶主題料理狀態請勿空白");
-				}
-
+				String fest_m_status = "f1";// 9
+				
 				System.out.println(fest_m_status);
 
-				String fest_m_kind = req.getParameter("fest_m_kind").trim();// 10
-				if (fest_m_kind == null || fest_m_kind.trim().length() == 0) {
-					errorMsgs.add("節慶主題料理種類請勿空白");
-				}
+				String fest_m_kind ="中秋節";
 				
 				Integer fest_m_price = null;// 3
 				try {
 					fest_m_price = new Integer(req.getParameter("fest_m_price"));
+					System.out.println(fest_m_price);
 				} catch (NumberFormatException e) {
 					fest_m_price = 0;
 					errorMsgs.add("價格請填數字");
@@ -473,7 +468,7 @@ public class FestMenuServlet extends HttpServlet {
 
 				/*************************** 3.新增完成，準備提交(Send the Success view **********/
 				String url = "/front-end/festMenu/listFestMall.jsp";
-				RequestDispatcher successView = req.getRequestDispatcher(url); // �s�W���\�����listAllEmp.jsp
+				RequestDispatcher successView = req.getRequestDispatcher(url); 
 				successView.forward(req, res);
 
 				/*************************** 其它可能的錯誤處理 *********************************/

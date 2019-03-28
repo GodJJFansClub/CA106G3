@@ -24,7 +24,7 @@ public class FestMenuDAO implements FestMenu_Interface {
 	}
 
 	private static final String INSERT_STMT = "INSERT INTO FEST_MENU (FEST_M_ID, FEST_M_NAME, FEST_M_QTY, FEST_M_START, FEST_M_END, FEST_M_PIC, FEST_M_RESUME,"
-			+ "FEST_M_SEND,FEST_M_STATUS,FEST_M_KIND,CHEF_ID) VALUES ('FM'||LPAD(TO_CHAR(FEST_MENU_SEQ.NEXTVAL),4,'0'),?,?,?,?,?,?,?,?,?,?)";
+			+ "FEST_M_SEND,FEST_M_STATUS,FEST_M_KIND,FEST_M_PRICE,CHEF_ID) VALUES ('FM'||LPAD(TO_CHAR(FEST_MENU_SEQ.NEXTVAL),4,'0'),?,?,?,?,?,?,?,?,?,?,?)";
 	private static final String GET_ALL_STMT = "SELECT * FROM FEST_MENU";
 	private static final String GET_ONE_STMT = "SELECT * FROM FEST_MENU WHERE FEST_M_ID = ?";
 	private static final String UPDATE = "UPDATE FEST_MENU SET FEST_M_NAME = ?,FEST_M_QTY = ?,FEST_M_START = ?,FEST_M_END = ?,FEST_M_PIC = ?,FEST_M_RESUME= ?,FEST_M_SEND = ?,FEST_M_STATUS = ?, FEST_M_KIND = ?,CHEF_ID = ? WHERE FEST_M_ID = ? ";
@@ -55,7 +55,8 @@ public class FestMenuDAO implements FestMenu_Interface {
 			pstmt.setDate(7, festMenuVO.getFest_m_send());
 			pstmt.setString(8, festMenuVO.getFest_m_status());
 			pstmt.setString(9, festMenuVO.getFest_m_kind());
-			pstmt.setString(10, festMenuVO.getChef_ID());
+			pstmt.setInt(10, festMenuVO.getFest_m_price());
+			pstmt.setString(11, festMenuVO.getChef_ID());
 
 			pstmt.executeUpdate();
 

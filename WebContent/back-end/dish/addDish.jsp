@@ -123,11 +123,11 @@
 
 										<script>
 											function idwrite(name) {
-												form1.dish_name.value = "黑椒羊小排"
-												form1.dish_price.value = "1440"
+												form1.dish_name.value = "蘋果烏魚子"
+												form1.dish_price.value = "808"
+												form1.dish_resume.value ="   除了搭配蒜苗還有水果，可上桌做年菜，還能當茶點，這一道就是將烏魚子組合配料做成茶點、下酒菜，搭配水果及異國配料更添不同風味，而且是大人小孩都可食用。"
 											}
 										</script>
-
 									</div>
 								</div>
 							</form>

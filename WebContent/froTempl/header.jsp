@@ -276,7 +276,7 @@
 		src="<%=request.getContextPath()%>/datetimepicker/jquery.datetimepicker.full.js"></script>
 </body>
 
-<c:if test="${not empty custVO.cust_name}">
+<c:if test="${not empty sessionScope.custVO.cust_name}">
 	<jsp:useBean id="custVO" scope="session" type="com.cust.model.CustVO" />
 	<script>
 			var MyPoint = "/BroadcastWebSocket";

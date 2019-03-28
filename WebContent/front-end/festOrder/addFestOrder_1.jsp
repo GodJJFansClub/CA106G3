@@ -72,6 +72,7 @@ th, td {
 
 <jsp:include page="/froTempl/header.jsp" flush="true" />
 <!-- ##### Contact Area Start #####-->
+<jsp:include page="/froTempl/headerMall.jsp" flush="true" />
 
 	<table id="table-1">
 		<tr>

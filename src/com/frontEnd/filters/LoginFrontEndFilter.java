@@ -48,6 +48,7 @@ public class LoginFrontEndFilter implements Filter {
 			res.sendRedirect(req.getContextPath() + "/front-end/index.jsp");
 			return;
 		} else {
+			session.setAttribute("filter", "a0");
 			chain.doFilter(request, response);
 		}
 	}

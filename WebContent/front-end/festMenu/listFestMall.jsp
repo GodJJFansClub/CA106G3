@@ -110,10 +110,13 @@
 				  			<img src="<%=request.getContextPath()%>/festMenu/festMenu.do?fest_m_ID=${festMenuVO.fest_m_ID}" style="height:600px; weight:600px" >
 				  			<div class="hover-content1 text-center1 d-flex align-items-center justify-content-center">
 				    			<div class="hover-text"  >
-				    			<h3 class="shopUse food_m_name" style="color:#ff359a; font-weight:bolder; font-size:30px;">
+				    			<h3 class="shopUse fest_m_name" style="color:#ff359a; font-weight:bolder; font-size:30px;">
 				    				${festMenuVO.fest_m_name}
 				    			</h3>
 				    			<div >
+				    			<p style="color:white; font-size:25px">
+				    				價格:${festMenuVO.fest_m_price}
+				    			</p>
 				    			<p style="color:white; font-size:25px">
 				    				數量:${festMenuVO.fest_m_qty}
 				    			</p>
@@ -150,7 +153,7 @@
 						 data: crtQryStrFoodM( $(this).attr("id") , "addFestMenu", $(this).find("form").serializeArray()),
 						 dataType: "json",
 						 success: function (data){
-							 console.log(data["foodMCardID"])
+							 
 							 if(data["foodMCardID"]){
 								 $("#"+data["foodMCardID"]).find(".errorMsgs").text(data["cartErrorMsgs"]);	 
 							 }else{
@@ -182,27 +185,27 @@
 		});
 		// 產生查詢字串
 		function crtQryStrFoodM( foodMCardID , action, foodMArr){
-			console.log(foodMCardID);
-			console.log(foodMArr);
+			
 			let queryString = { "foodMCardID":foodMCardID , "action":action };
 			let foodMArrLen = foodMArr.length;
 			for(let i = 0; i < foodMArrLen; i++){
 				queryString[foodMArr[i].name] = foodMArr[i].value;
 			}
-			console.log(queryString);
+			
 			return queryString;
 		}
 		// 懶得在伺服器再查詢, 所以透過此方法再加入購物商時取得對應的食材名, 標題名, 供應商名
 		// 並暫存到記憶體中, 等伺服器回應時就可以一起加入到購物車
 		function getfoodMNames(shopUseClass){
-			
+			console.log(shopUseClass);
 			let shopUseClassLen = shopUseClass.length;
 			let foodMNames = {};
-			
+
 			for(let i = 0; i < shopUseClassLen; i++){
-				foodMNames[shopUseClass[i].className.split(" ",3)[2]] = shopUseClass[i].innerText;
+				console.log(shopUseClass[i].className);
+				foodMNames[shopUseClass[i].className.split(" ",2)[1]] = shopUseClass[i].innerText;
 			}
-			
+			console.log(foodMNames);
 			return foodMNames;
 		}
 		// 新增或更改已在購物車的商品

@@ -52,23 +52,11 @@ th, td {
 </head>
 <body>
 	<jsp:include page="/froTempl/header.jsp" flush="true" />
+	<jsp:include page="/froTempl/headerFoodSup.jsp" flush="true" />
 	<!-- ##### Breadcrumb Area Start ##### -->
 	<br>
-	<br>
-	<br>
-	<br>
-	<section class="breadcrumb-area1 bg-img bg-overlay jarallax"
-		style="background-image: url(<%=request.getContextPath()%>/froTempl/temp/img/bg-img/foodSupPic.jpg);">
-		<div class="container-fluid h-100">
-			<div class="row h-100 align-items-center">
-				<div class="col-12">
-					<div class="breadcrumb-content">
-						<h2 style="font-weight: bold">食材供應商專區-廣告管理</h2>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	<!-- ##### Breadcrumb Area Start ##### -->
+		
 	<!-- ##### Breadcrumb Area End ##### -->
 
 	<!-- ##### Contact Area Start #####-->

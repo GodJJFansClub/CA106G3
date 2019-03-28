@@ -70,7 +70,7 @@
 							</th>
 							<th scope="row">
 								<form method="post" action="<%=request.getContextPath()%>/chefDish/chefDish.do">
-									<input type="submit" value="審核通過">
+									<input type="submit"  class="btn btn-secondary" value="審核通過">
 									<input type="hidden" name="chef_ID"  value="${chefDishVO.chef_ID}">
 									<input type="hidden" name="dish_ID"  value="${chefDishVO.dish_ID}">
 									<input type="hidden" name="chef_dish_status"  value="d1">
@@ -79,7 +79,7 @@
 							</th>
 							<th scope="row">
 								<form method="post" action="<%=request.getContextPath()%>/chefDish/chefDish.do">
-									<input type="submit" value="審核不通過">
+									<input type="submit"  class="btn btn-secondary" value="審核不通過">
 									<input type="hidden" name="chef_ID"  value="${chefDishVO.chef_ID}">
 									<input type="hidden" name="dish_ID"  value="${chefDishVO.dish_ID}">
 									<input type="hidden" name="action"	value="delete_bakend">

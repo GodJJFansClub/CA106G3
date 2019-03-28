@@ -74,39 +74,39 @@ th, td {
 									</c:forEach>
 								</ul>
 							</c:if>
-
-							<div class="row justify-content-center">
-								<div class="col-12 col-lg-8">
+		
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-8">
 									<!-- Contact Form -->
-									<div class="contact-form-area1 text-center">
-		<form method="post" action="<%=request.getContextPath()%>/foodMall/foodMall.do" name="form1" enctype="multipart/form-data">
+			<div class="contact-form-area text-center">				
+		<form id="magicRes" method="post" action="<%=request.getContextPath()%>/foodMall/foodMall.do" name="form1" enctype="multipart/form-data">
 			<table>
 			<tr><td>${errorMsgs.excMsgs}</td></tr>
 			<tr>
 				<td>標題:<font color=red><b>*</b></font></td>
-				<td><input type="TEXT" name="food_m_name" size="20" 
-					 value="<%= (foodMallVO==null)? "又大又甜的蘋果" : foodMallVO.getFood_m_name()%>" class="form-control wow fadeInUp" data-wow-delay="100ms"/></td>
+				<td><input type="TEXT" id="food_m_name" name="food_m_name" size="20" 
+					 value="<%= (foodMallVO==null)? "" : foodMallVO.getFood_m_name()%>" class="form-control wow fadeInUp" data-wow-delay="100ms"/></td>
 					 <td><font color=red>${errorMsgs.em_name}</font></td>
 			</tr>
 			<tr>
 				<td>商品價格:<font color=red><b>*</b></font></td>
-				<td><input type="TEXT" name="food_m_price" size="7"
-					 value="<%= (foodMallVO==null)? "10000" : foodMallVO.getFood_m_price()%>" class="form-control wow fadeInUp" data-wow-delay="100ms"/></td>
+				<td><input type="TEXT" id="food_m_price" name="food_m_price" size="7"
+					 value="<%= (foodMallVO==null)? "" : foodMallVO.getFood_m_price()%>" class="form-control wow fadeInUp" data-wow-delay="100ms"/></td>
 					 <td><font color=red>${errorMsgs.em_price}</font></td>
 			</tr>
 			<tr>
 				<td>單位:<font color=red><b>*</b></font></td>
 				<td>
-					<c:forEach var="foodUnit" items="${foodUnitMap}">
-						<input type="radio" name="food_m_unit" value="${foodUnit.key}"
+					<c:forEach var="foodUnit" items="${foodUnitMap}" varStatus="ds">
+						<input type="radio" id="rad${ds.index}" name="food_m_unit" value="${foodUnit.key}"
 							${(foodUnit.key == foodMallVO.food_m_unit)?'checked':''} style="width:15px;height:15px">${foodUnit.value}
 					</c:forEach>
 				</td><td><font color=red>${errorMsgs.em_unit}</font></td>
 			</tr>
 			<tr>
 				<td>產地:<font color=red><b>*</b></font></td>
-				<td><input type="TEXT" name="food_m_place" size="7"
-					 value="<%= (foodMallVO==null)? "台灣" : foodMallVO.getFood_m_place()%>" class="form-control wow fadeInUp" data-wow-delay="100ms"/></td>
+				<td><input type="TEXT" id="food_m_place" name="food_m_place" size="7"
+					 value="<%= (foodMallVO==null)? "" : foodMallVO.getFood_m_place()%>" class="form-control wow fadeInUp" data-wow-delay="100ms"/></td>
 				<td><font color=red>${errorMsgs.em_place}</font></td>
 			</tr>
 			<tr>
@@ -143,19 +143,23 @@ th, td {
 			<tr>
 				<td>介紹:</td>
 				<td>
-					<textarea name="food_m_resume">${empty foodMallVO.food_m_resume ? "請介紹" : foodMallVO.food_m_resume}</textarea>
-					<script>CKEDITOR.replace('food_m_resume');</script>
+					<textarea id="food_m_resume"  style="height:600px;"  class="form-control" name="food_m_resume">${empty foodMallVO.food_m_resume ? "" : foodMallVO.food_m_resume}</textarea>
+					
 				</td>
 			</tr>
 			</table>
 			<input type="hidden" name="food_sup_ID" value="${foodSupVO.food_sup_ID}">
 			<input type="hidden" name="action" value="insert">
+			<img src="/CA106G3/images/x.png" height="20" width="20" onclick="idwrite(this)">
 			<button type="submit" class="btn pixel-btn wow fadeInUp"
-												data-wow-delay="300ms">送出</button>
-										</form>
+				data-wow-delay="300ms">送出</button>
+		</form>
 								
 		<!-- ##### Contact Area End #####-->
-
+		
+			</div>
+			</div>
+		</div>
 
 
 	
@@ -207,14 +211,22 @@ th, td {
 				$('#foodSelect').empty();
 				$('#foodSelect').append("<option value='-1'>請選擇</option>");
 			}
+			
+			function idwrite(eve){
+				$("#magicRes").find("#food_m_name").val("好吃的烏魚子");
+				$("#magicRes").find("#food_m_price").val("600");
+				$("#rad6").attr("checked",true);
+				$("#magicRes").find("#food_m_place").val("南極");
+				$("#magicRes").find("#food_m_resume").val(
+				"在南極的深海底下有一個大鳳梨，也有很多的帝王蟹，但是只有一支是老闆。"
+				+ "蟹老闆每賣出一個烏魚子，就會有一隻企鵝沒辦法游泳。沒有買賣就不會有傷害!!");
+				
+			}
 		</script>
-			</div>
-								</div>
-							</div>
 
-						</div>
+			</div>
 		</section>
-</section>
+	</section>
 	<jsp:include page="/froTempl/footer.jsp" flush="true" />
 </body>
 </html>

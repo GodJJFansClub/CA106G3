@@ -21,7 +21,7 @@ font-size:30px;
   outline: 0 solid transparent;
   color: #000000;
   font-weight: 500;
-  font-size: 45px; }
+  font-size: 50px; }
 
 </style>
 </head>

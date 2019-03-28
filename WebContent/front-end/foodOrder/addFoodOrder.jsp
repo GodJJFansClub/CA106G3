@@ -7,7 +7,12 @@
 </head>
 <body>
 	<jsp:include page="/froTempl/header.jsp" flush="true" />
+	<jsp:include page="/froTempl/headerMall.jsp" flush="true" />
 	<section class="contact-area section-padding-100">
+	<div class="row justify-content-center">
+					<div class="col-12 col-lg-8">
+						<!-- Contact Form -->
+						<div class="contact-form-area text-center">
 	<%-- 錯誤列表 --%>
 	<c:if test="${not empty errorMsgs}">
 		<font style="color: red">請修正以下錯誤:</font>
@@ -20,34 +25,34 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="card card-body">
-					<h4 class="card-title">付款</h4>
-					<form id="endOrder" class="form-horizontal m-t-30" method="post" action="<%=request.getContextPath()%>/foodOrder/foodOrder.do">
+					<h4 class="card-title" style="font-size:50px">付款</h4>
+					<form id="endOrder" name="form1" class="form-horizontal m-t-30" method="post" action="<%=request.getContextPath()%>/foodOrder/foodOrder.do">
 						<div class="form-group">
-						<label>收件人姓名</label>
+						<label style="font-size:25px">收件人姓名</label>
 						<input type="text" class="form-control" name="food_or_name"
 											value="${empty foodOrderVO ? '': foodOrderVO.food_or_name}">
 						</div>
 						<div class="form-group">
-							<label>收件地址</label>
+							<label style="font-size:25px">收件地址</label>
 							<select name="cityName" id="twCityName">
 								<option value="-1">--請選擇縣市--</option>
 							</select>
 							<select name="areaName" id="CityAreaName">
 								<option value="-1">--請選擇區域--</option>
 							</select>
-							<input readonly id="zipCode" name="zipCode" type="text" size="10" placeholder="區域號碼">
+							<input readonly id="zipCode" style="width:100px" name="zipCode" type="text" size="5" placeholder="區域號碼">
 							<select name="roadName" id="AreaRoadName">
 								<option value="-1">--請選擇路名--</option>
 							</select>
-							<input type="text" name="partAddr"  class="form-control" >
+							<input type="text" name="partAddr" class="form-control" >
 						</div>
 						<div class="form-group">
-							<label>收件人電話</label>
+							<label style="font-size:25px">收件人電話</label>
 							<input type="text" name="food_or_tel" class="form-control" placeholder="09XXXXXXXX"
 									value="${empty foodOrderVO ? '':foodOrderVO.food_or_tel}">
 						</div>
 						<div class="form-group">
-							<label>卡號</label>
+							<label style="font-size:25px">卡號</label>
 							<div class="form-row">
 								<div class="form-group col-md-1">
 									<input type="text" class="form-control" id="credNum1" name="credNum1" maxlength="4">
@@ -65,14 +70,20 @@
 						</div>
 							<input type="hidden" name="cust_ID" value="${custVO.cust_ID}">
 							<input type="hidden" name="action" value="insertOrODs">
+							<img src="<%=request.getContextPath()%>/images/x.png"
+									height="20" width="20" onClick="idwrite(this)">
 							<input type="hidden" name="requestURL" value="<%=request.getServletPath()%>">
-							<input id="btnLoc" class="btn btn-success" type="submit" value="付款">
+							<button id="btnLoc" class="btn btn-info" type="submit"  >付款</button>
 					</form>
 				</div>
 			</div>
 		</div>
+		</div>
+			</div>
+		</div>
 	</section>
 	<jsp:include page="/froTempl/footer.jsp" flush="true" />
+	<jsp:include page="/froTempl/headerMall.jsp" flush="true" />
 	<style>
 		.xdsoft_datetimepicker .xdsoft_datepicker {
 			width: 300px; /* width:  300px; */
@@ -82,7 +93,21 @@
 			height: 151px; /* height:  151px; */
 		}
 	</style>
-
+<script>
+      function idwrite(name){
+    	  
+    	  form1.food_or_name.value="動保協會"
+    		  form1.food_or_tel.value="0988777564"
+    	  form1.partAddr.value="1號"
+    		  form1.credNum1.value="8457"
+    	  form1.credNum1.value="8457" 
+    		  form1.credNum2.value="8080" 
+    			  form1.credNum3.value="8081" 
+    				  form1.credNum4.value="6689" 
+    		  
+    	 
+      }
+</script>
 <script>
 		$(document).ready(function(){
 			$.ajax({

@@ -244,12 +244,12 @@ th, td {
       function idwrite(name){
     	  
     	  form1.cust_pwd.value="123456"
-    	  form1.cust_name.value="杜先生"
+    	  form1.cust_name.value="連勝文"
     	  form1.cust_pid.value="H123456789"
     	  form1.cust_sex.value="M"
     	  form1.partAddr.value="1號"
     	  form1.cust_brd.value="2018-12-01"
-    	  form1.cust_tel.value="0907077543"
+    	  form1.cust_tel.value="0932187849"
     	  form1.cust_mail.value="ca106g3@hotmail.com"
     	  form1.cust_niname.value="資策會小小書童" 
     		  

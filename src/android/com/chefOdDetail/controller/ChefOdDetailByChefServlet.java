@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import android.com.chef.model.ChefService;
 import android.com.chefOdDetail.model.ChefOdDetailService;
 import android.com.chefOdDetail.model.ChefOdDetailVO;
 import android.com.chefOrder.model.ChefOrderDAO;
@@ -141,9 +142,12 @@ public class ChefOdDetailByChefServlet extends HttpServlet {
 			String chef_or_status = jsonObject.get("chef_ID").getAsString();
 			String chef_or_ID = jsonObject.get("chef_or_ID").getAsString();
 			String total = jsonObject.get("total").getAsString();
+			ChefService chefService=new ChefService();
+			String chef_ID=chefOrderService.getOneChefOrder(chef_or_ID).getChef_ID();
+			String chef_tel=chefService.getOneChef(chef_ID).getChef_tel();
 			chefOrderService.updateChefOrderStatus(chef_or_ID, chef_or_status);
 		 	Send se = new Send();
-		 	String[] tel ={"0921514217"};
+		 	String[] tel ={chef_tel};
 		 	String message = "您已於食神來了網站消費總額：$"+total+"元，該消費帳單會於當月月底前寄出！";
 		 	se.sendMessage(tel , message);
 		}else if("updateCust".equals(action)) {
@@ -153,12 +157,15 @@ public class ChefOdDetailByChefServlet extends HttpServlet {
 			MenuOrderService menuOrderService=new MenuOrderService();
 			MenuService menuService=new MenuService();
 			MenuVO menuVO=menuService.getOneMenu(menuOrderService.getOneMenuOrder(menu_od_ID).getMenu_ID());
+			String cust_ID=menuOrderService.getOneMenuOrder(menu_od_ID).getCust_ID();
+			CustService custService=new CustService();
+			String cust_tel=custService.getOneCust(cust_ID).getCust_tel();
 			
 			
 //			String total = jsonObject.get("total").getAsString();
 			menuOrderService.updateMenuOrderStatus(menu_od_ID, menu_od_status);
 		 	Send se = new Send();
-		 	String[] tel ={"0987187849"};
+		 	String[] tel ={cust_tel};
 		 	String message = "您已於食神來了網站消費總額：$"+menuVO.getMenu_price()+"元，該消費帳單會於當月月底前寄出！";
 		 	se.sendMessage(tel , message);
 		}
@@ -167,5 +174,6 @@ public class ChefOdDetailByChefServlet extends HttpServlet {
 		
 
 	}
+
 
 }

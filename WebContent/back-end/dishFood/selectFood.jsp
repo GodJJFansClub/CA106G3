@@ -209,6 +209,7 @@
 			});
 			
 		}
+		divE.setAttribute("display","hidden");
 		$("#foodList").append(divE);
 	</script>
 	
