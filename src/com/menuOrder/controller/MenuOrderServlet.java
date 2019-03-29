@@ -4,17 +4,24 @@ import java.io.IOException;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.websocket.Session;
 
 import com.chefSch.model.ChefSchService;
 import com.chefSch.model.ChefSchVO;
+import com.dish.model.DishService;
+import com.dish.model.DishVO;
+import com.menu.model.MenuService;
 import com.menuOrder.model.MenuOrderService;
 import com.menuOrder.model.MenuOrderVO;
 
@@ -118,16 +125,28 @@ public class MenuOrderServlet extends HttpServlet {
 				MenuOrderVO menuOrderVO = menuOrderSvc.getOneMenuOrder(menu_od_ID);
 				request.setAttribute("menuOrderVO", menuOrderVO);
 				
+				String cust_ID = menuOrderVO.getCust_ID();
+				String menu_ID = menuOrderVO.getMenu_ID();
+				
+				MenuService menuSvc = new MenuService();
+				String menu_name = menuSvc.getOneMenu(menu_ID).getMenu_name();
+				
 				String chef_ID = menuOrderVO.getChef_ID();
 				SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
 				Timestamp date = menuOrderVO.getMenu_od_book();
 				Date chef_sch_date = Date.valueOf(sdFormat.format(date));
 				
+				ServletContext servletContext = getServletContext();
+				Map< String, Session> bcSessionMap = (Map< String, Session>)servletContext.getAttribute("bcSessionMap");
+				
 				ChefSchVO chefSchVO = null;
 				if("g1".equals(menu_od_status)) {
+					bcSessionMap.get(cust_ID).getAsyncRemote().sendText("您所訂購的套餐："+ menu_name +"已通過審核。");
 					ChefSchService chefSchSvc = new ChefSchService();
 					chefSchVO = chefSchSvc.update(chef_ID, chef_sch_date, "c1");
-				}else if("g2".equals(menu_od_status)) {
+				}
+				if("g2".equals(menu_od_status)) {
+					bcSessionMap.get(cust_ID).getAsyncRemote().sendText("您所訂購的套餐："+ menu_name +"未通過審核。");
 					ChefSchService chefSchSvc = new ChefSchService();
 					chefSchVO = chefSchSvc.update(chef_ID, chef_sch_date, "c0");
 				}

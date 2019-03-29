@@ -55,7 +55,7 @@
 											action="<%=request.getContextPath()%>/menuOrder/menuOrder.do">
 											<input type="submit" class="btn btn-success" value="確認訂單"> 
 											<input type="hidden" name="menu_od_ID" value="${menuOrderVO.menu_od_ID}"> 
-											<input type="hidden" name="menu_od_status" value="g2"> 
+											<input type="hidden" name="menu_od_status" value="g1"> 
 											<input type="hidden" name="action" value="getOneForCheck">
 										</form>
 									</td>

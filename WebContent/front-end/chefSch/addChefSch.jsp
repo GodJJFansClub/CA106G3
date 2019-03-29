@@ -110,7 +110,8 @@
 											</form>
 										</c:if>
 										<c:if test="${chefSchVO.chef_sch_status=='c2'}">
-											<a href="<%=request.getContextPath()%>/front-end/menuOrder/unCheckMenuOrder.jsp"><input type="button" class="btn btn-warning" value="審核"></a>
+											<a href="<%=request.getContextPath()%>/front-end/menuOrder/unCheckMenuOrder.jsp">
+											<input type="button" class="btn btn-warning" value="審核"></a>
 										</c:if>
 									</td>
 								</tr>

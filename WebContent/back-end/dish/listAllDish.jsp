@@ -30,7 +30,7 @@
 			<div class="page-breadcrumb">
 				<%--=================================工作區================================================--%>
 				
- 	<div class="alert alert-secondary text-center" role="alert" ><font style="font-weight:bold;font-size:26px;">新菜色申請</font></div>
+ 	<div class="alert alert-secondary text-center" role="alert" ><font style="font-weight:bold;font-size:26px;">修改菜色狀態</font></div>
 	<hr class="border:0;height: 1px;background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));"/>
 
 				<%-- 錯誤表列 --%>

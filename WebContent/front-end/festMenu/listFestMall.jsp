@@ -138,7 +138,7 @@
 	         </div>
 	    </div>
 	    </section>
-	<jsp:include page="/froTempl/footer.jsp" flush="true" />
+	
 	<script>
 		
 		$(document).ready(function(){

@@ -127,7 +127,7 @@ public class ChefDishServlet extends HttpServlet {
 				DishVO dishWebUseVO = dishSvc.getOneDish(dish_ID);
 				Base64.Encoder encoder = Base64.getEncoder();
 				
-				if(chefDishVO.getChef_dish_status().equals("d1")) {
+				if("d1".equals(chefDishVO.getChef_dish_status())) {
 					String encodedText = encoder.encodeToString( dishWebUseVO.getDish_pic());
 					bcSessionMap.get(chef_ID).getAsyncRemote().sendText( 
 						"您的"+  dishWebUseVO.getDish_name() +"已通過審核"
@@ -135,7 +135,7 @@ public class ChefDishServlet extends HttpServlet {
 					
 				}
 				
-				if(chefDishVO.getChef_dish_status().equals("d2")) {
+				if("d2".equals(chefDishVO.getChef_dish_status())) {
 					bcSessionMap.get(chef_ID).getAsyncRemote().sendText( "您的"+ dishWebUseVO.getDish_name() +"審核不通過");
 				}
 				

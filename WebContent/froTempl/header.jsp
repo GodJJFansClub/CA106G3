@@ -246,8 +246,7 @@
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalCenterTitle">Modal
-						title</h5>
+					<h5 class="modal-title" id="exampleModalCenterTitle">通知</h5>
 				</div>
 				<div id="newBroMessage" class="modal-body"></div>
 				<div class="modal-footer">
