@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
+<!-- Font-family -->	
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou">
 </head>
 <body>
 	<jsp:include page="/froTempl/header.jsp" flush="true" />
@@ -21,11 +23,11 @@
                 <div class="col-12">
                     <!-- Section Heading -->
                     <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
-                        <h2>加入成功，請至信箱收信</h2>
                         <img src="<%=request.getContextPath()%>/froTempl/temp/img/core-img/logo_cut.gif" width="200px"
                          height="500px"alt="">
-                        
-                        <h3>系統將於 <span id='timer'>5</span> 秒後，為您轉跳至首頁。</h3>
+                         <font style="font-size:60px;font-family:'ZCOOL QingKe HuangYou';">加入成功，請至信箱收取驗證信。</font>
+                        <br><br>
+                        <font style="font-size:36px;font-family:'ZCOOL QingKe HuangYou';">將於 <span id='timer'>5</span> 秒後，跳轉至首頁。</font>
                     </div>
                 </div>
             </div>

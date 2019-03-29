@@ -3,6 +3,8 @@
 <html>
 <head>
 <title></title>
+<!-- Font-family -->	
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou">
 </head>
 <body>
 
@@ -25,12 +27,10 @@
                 <div class="col-12">
                     <!-- Section Heading -->
                     <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
-                        <h2>帳號密碼錯誤</h2>
-                        <img src="<%=request.getContextPath()%>/froTempl/temp/img/core-img/logo_cut.gif"  width="200px"
-                         height="500px"alt="">
-                        
-                        <br>
-                        <a href="<%=request.getContextPath()%>/front-end/loginFrontEnd.jsp" class="btn pixel-btn m-2">請按此重新登入</a>
+                        <img src="<%=request.getContextPath()%>/froTempl/temp/img/core-img/logo_cut.gif"  width="200px" height="500px"alt="">
+                        <font style="font-size:80px;font-family:'ZCOOL QingKe HuangYou';">帳號密碼錯誤</font>
+                        <br><br><br>
+                        <a href="<%=request.getContextPath()%>/front-end/loginFrontEnd.jsp" class="btn pixel-btn m-2" style="font-weight:normal;font-size:24px;font-family:'ZCOOL QingKe HuangYou';margin-top:20px;">請重新登入</a>
                         
                     </div>
                 </div>
@@ -60,23 +60,5 @@
 
 
 	<jsp:include page="/froTempl/footer.jsp" flush="true" />
-
-
-
-
-	<br>
-	<table border='1' cellpadding='5' cellspacing='0' width='400'>
-		<tr bgcolor='orange' align='center' valign='middle' height='20'>
-			 <td>   
-			       <h3> </h3> 
-			     
-				     <h3></h3>
-			 </td>
-		</tr>
-	</table>
-	<b> <br>
-	<br>                以下留空....
-	</b>
-	
 </body>
 </html>

@@ -57,7 +57,7 @@
 							<tr>
 								<th scope="row">${menuOrderVO.menu_od_ID}</th>
 								<td>${menuSvc.getOneMenu(menuOrderVO.menu_ID).menu_name}</td>
-								<td>${custSvc.getOneCust(chefVO.chef_ID).cust_name}</td>
+								<td>${custSvc.getOneCust(menuOrderVO.chef_ID).cust_name}</td>
 								<td>
 									<c:if test="${menuOrderVO.menu_od_status=='g0'}">未審核</c:if>
 									<c:if test="${menuOrderVO.menu_od_status=='g1'}">審核未通過</c:if>
